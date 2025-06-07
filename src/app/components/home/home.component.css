@@ -1,0 +1,165 @@
+/* === GLOBAL STYLES === */
+:host {
+  display: block;
+  background: #f4f6f8;
+  color: #1a1a1a;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* === SECTIONS === */
+section {
+  padding: 4rem 2rem;
+  position: relative;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+/* === HERO SECTION === */
+.hero {
+  background: linear-gradient(120deg, #1f1c2c, #928dab);
+  color: #fff;
+  text-align: center;
+  padding: 5rem 2rem;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  opacity: 0.9;
+}
+
+/* === ABOUT SECTION === */
+.about .card {
+  background: #fff;
+  padding: 2rem;
+  border-left: 5px solid #4b6cb7;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 1.2s ease;
+}
+
+/* === SERVICES SECTION === */
+.services .card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.services .card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.services .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.services .card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 12px; height: 12px;
+  background: #4b6cb7;
+  border-radius: 50%;
+}
+
+/* === CONTACT CTA SECTION === */
+.contact .cta {
+  background: #1f1c2c;
+  color: white;
+  padding: 3rem;
+  text-align: center;
+  border-radius: 12px;
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact .cta::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  bottom: -20px;
+  right: -20px;
+}
+
+.contact h3 {
+  font-size: 1.8rem;
+}
+
+.contact a {
+  margin-top: 1.5rem;
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: #ffffff;
+  color: #1f1c2c;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.contact a:hover {
+  background: #e0e0e0;
+}
+
+/* === DECORATIVE CORNER === */
+section::before,
+section::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: #4b6cb7;
+  opacity: 0.1;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+section::before {
+  top: 20px;
+  left: 20px;
+}
+
+section::after {
+  bottom: 20px;
+  right: 20px;
+}
+
+/* === ANIMATIONS === */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
